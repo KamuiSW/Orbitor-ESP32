@@ -12,7 +12,7 @@ public:
       auto cfg = _bus.config();
       cfg.spi_host   = VSPI_HOST;
       cfg.spi_mode   = 0;
-      cfg.freq_write = 10000000;   // 10 MHz for jumper wires
+      cfg.freq_write = 10000000;
       cfg.freq_read  = 10000000;
       cfg.spi_3wire  = true;
       cfg.use_lock   = true;
@@ -30,7 +30,7 @@ public:
     {
       auto cfg = _panel.config();
       cfg.pin_cs   = 23;   // CS
-      cfg.pin_rst  = 21;   // RST (try -1 if still blank)
+      cfg.pin_rst  = 21;   // RST
       cfg.pin_busy = -1;
 
       cfg.panel_width  = 240;
@@ -38,8 +38,8 @@ public:
       cfg.offset_x = 0;
       cfg.offset_y = 0;
 
-      cfg.invert = true;      // if blank but backlight on, try false
-      cfg.rgb_order = false;  // if colors swapped later, flip this
+      cfg.invert = true;
+      cfg.rgb_order = false;
       cfg.readable = false;
 
       _panel.config(cfg);
@@ -58,7 +58,6 @@ void setup() {
   tft.init();
   tft.setRotation(0);
 
-  // Big obvious color flashes:
   tft.fillScreen(TFT_RED);   delay(500);
   tft.fillScreen(TFT_GREEN); delay(500);
   tft.fillScreen(TFT_BLUE);  delay(500);
