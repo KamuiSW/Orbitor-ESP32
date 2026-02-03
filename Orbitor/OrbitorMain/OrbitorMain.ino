@@ -6,8 +6,8 @@
 
 #include "earth_240x120.h"
 
-#define WIFI_SSID "YOUR_WIFI_SSID"
-#define WIFI_PASS "YOUR_WIFI_PASSWORD"
+#define WIFI_SSID ""
+#define WIFI_PASS ""
 
 static const char* NTP_SERVER = "pool.ntp.org";
 static const long  GMT_OFFSET_SEC = 0;
